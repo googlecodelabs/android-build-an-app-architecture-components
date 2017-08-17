@@ -23,12 +23,24 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * {@link Dao} which provides an api for all data operations with the {@link SunshineDatabase}
  */
 @Dao
 public interface WeatherDao {
+    /**
+     * Selects all {@link WeatherEntry} entries after a give date, inclusive. The LiveData will
+     * be kept in sync with the database, so that it will automatically notify observers when the
+     * values in the table change.
+     *
+     * @param date A {@link Date} from which to select all future weather
+     * @return {@link LiveData} list of all {@link WeatherEntry} objects after date
+     */
+    @Query("SELECT * FROM weather WHERE date >= :date")
+    LiveData<List<WeatherEntry>> getCurrentWeatherForecasts(Date date);
+
     /**
      * Selects all ids entries after a give date, inclusive. This is for easily seeing
      * what entries are in the database without pulling all of the data.
