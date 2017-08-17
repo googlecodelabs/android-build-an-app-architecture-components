@@ -31,15 +31,15 @@ import java.util.List;
 @Dao
 public interface WeatherDao {
     /**
-     * Selects all {@link WeatherEntry} entries after a give date, inclusive. The LiveData will
+     * Selects all {@link ListWeatherEntry} entries after a give date, inclusive. The LiveData will
      * be kept in sync with the database, so that it will automatically notify observers when the
      * values in the table change.
      *
      * @param date A {@link Date} from which to select all future weather
-     * @return {@link LiveData} list of all {@link WeatherEntry} objects after date
+     * @return {@link LiveData} list of all {@link ListWeatherEntry} objects after date
      */
-    @Query("SELECT * FROM weather WHERE date >= :date")
-    LiveData<List<WeatherEntry>> getCurrentWeatherForecasts(Date date);
+    @Query("SELECT id, weatherIconId, date, min, max FROM weather WHERE date >= :date")
+    LiveData<List<ListWeatherEntry>> getCurrentWeatherForecasts(Date date);
 
     /**
      * Selects all ids entries after a give date, inclusive. This is for easily seeing
