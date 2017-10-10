@@ -15,10 +15,10 @@
  */
 package com.example.android.sunshine.ui.list;
 
-import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -34,7 +34,7 @@ import java.util.Date;
 /**
  * Displays a list of the next 14 days of forecasts
  */
-public class MainActivity extends LifecycleActivity implements
+public class MainActivity extends AppCompatActivity implements
         ForecastAdapter.ForecastAdapterOnItemClickHandler {
 
     private ForecastAdapter mForecastAdapter;
