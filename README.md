@@ -39,7 +39,7 @@ All activities and adapters - anything to do with display.
 * `SunshineDateUtils` -  Utility methods for normalizing dates across time zones; this helps us to "round" to the nearest date, so that when you store a date in the database, it always refers to that date at 12:00am, GMT.
 * `SunshineWeatherUtils` -  Utility methods related to displaying the weather, such as picking the right image resource to show a cloudy sky or rain.
 
-### AppExectuors class
+### AppExecutors class
 This class provides a global executor pool. You can learn more about thread pools [here](https://www.youtube.com/watch?v=uCmHoEY1iTM). In short, this class provides an easy and efficient way to run code off of the main thread.
 
 ## License
