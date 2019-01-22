@@ -52,5 +52,4 @@ dependencies {
     androidTestImplementation "com.android.support:support-annotations:$support_version"
     androidTestImplementation "com.android.support.test:runner:$support_test_version"
     androidTestImplementation "com.android.support.test:rules:$support_test_version"
-
 }
