@@ -38,18 +38,12 @@ dependencies {
 
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$arch_version"
-    //     Support library depends on this lightweight import ??
-    implementation "android.arch.lifecycle:runtime:$arch_version"
-
-//    annotationProcessor "android.arch.lifecycle:compiler:$arch_version"
     implementation "android.arch.lifecycle:common-java8:$arch_version"
-
     implementation "android.arch.persistence.room:runtime:$arch_version"
     annotationProcessor "android.arch.persistence.room:compiler:$arch_version"
 
-    // optional - Test helpers for LiveData
+    // optional - Test helpers for LiveData and Room
     testImplementation "android.arch.core:core-testing:$arch_version"
-    // Test helpers
     testImplementation "android.arch.persistence.room:testing:$arch_version"
 
     // Instrumentation dependencies use androidTestImplementation"
