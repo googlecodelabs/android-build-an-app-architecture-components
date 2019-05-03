@@ -16,9 +16,9 @@
 
 package com.example.android.sunshine.data;
 
-import android.arch.lifecycle.LiveData;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
 import com.example.android.sunshine.AppExecutors;
 import com.example.android.sunshine.data.database.ListWeatherEntry;
 import com.example.android.sunshine.data.database.WeatherDao;

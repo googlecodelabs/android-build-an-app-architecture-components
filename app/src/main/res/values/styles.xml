@@ -22,7 +22,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <!-- Used for settings preference theme -->
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
     <!-- forecast activity action bar styles -->

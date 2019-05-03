@@ -16,9 +16,9 @@
 
 package com.example.android.sunshine.ui.list;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
 
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import com.example.android.sunshine.data.SunshineRepository;
 
 /**

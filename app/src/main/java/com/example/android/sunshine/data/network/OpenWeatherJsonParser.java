@@ -15,8 +15,7 @@
  */
 package com.example.android.sunshine.data.network;
 
-import android.support.annotation.Nullable;
-
+import androidx.annotation.Nullable;
 import com.example.android.sunshine.data.database.WeatherEntry;
 import com.example.android.sunshine.utilities.SunshineDateUtils;
 
