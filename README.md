@@ -1,5 +1,16 @@
-Sunshine with Architecture Components
+Sunshine with Architecture Components (DEPRECATED)
 ================================
+## This Sample is Deprecated
+This sample is deprecated and is not actively maintained. For example, the [WorkManager library](https://developer.android.com/topic/libraries/architecture/workmanager) 
+is now the best practice solution for handling scheduled background work.
+
+Instead, please refer to the following samples and training materials:
+* [Room with a View sample code](https://github.com/googlecodelabs/android-room-with-a-view)
+* [Room with a View Codelab in Java](https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0)
+* [Room with a View Codelab in Kotlin](https://codelabs.developers.google.com/codelabs/android-room-with-a-view-kotlin/#0)
+* [Architecture Components Samples](https://github.com/googlesamples/android-architecture-components)
+* [Developing Android Apps with Kotlin online training course](https://www.udacity.com/course/developing-android-apps-with-kotlin--ud9012)
+
 ## About
 This app is for the [Build an App with Architecture Components Codelab](https://codelabs.developers.google.com/codelabs/build-app-with-arch-components/index.html).
 
