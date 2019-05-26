@@ -1,16 +1,18 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.example.android.sunshine"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -18,7 +20,9 @@ android {
         }
     }
 
-    dataBinding.enabled = true
+    dataBinding {
+        enabled = true
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -28,21 +32,37 @@ android {
 
 // Versions number variables are defined in the module build.gradle file
 dependencies {
-    compile "com.android.support:appcompat-v7:$support_version"
-    compile "com.android.support:recyclerview-v7:$support_version"
-    compile "com.android.support:preference-v7:$support_version"
-    compile "com.android.support.constraint:constraint-layout:$constraint_layout_version"
-    compile "com.firebase:firebase-jobdispatcher:$firebase_jobdispatcher_version"
-    compile "android.arch.lifecycle:runtime:$arch_version"
-    compile "android.arch.lifecycle:extensions:$arch_version"
-    annotationProcessor "android.arch.lifecycle:compiler:$arch_version"
-    compile "android.arch.persistence.room:runtime:$arch_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$arch_version"
+    // kotlin
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // androidx appcompat
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    // androidx core
+    implementation "androidx.core:core-ktx:$androidx_version"
+
+    // android material
+    implementation "com.google.android.material:material:$androidx_version"
+
+    // androidx constraint layout
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+
+    // firebase
+    implementation "com.firebase:firebase-jobdispatcher:$firebase_jobdispatcher_version"
+
+    // lifecycle
+    implementation "android.arch.lifecycle:runtime:$arch_version"
+    implementation "android.arch.lifecycle:extensions:$arch_version"
+    kapt "android.arch.lifecycle:compiler:$arch_version"
+
+    // room
+    implementation "android.arch.persistence.room:runtime:$arch_version"
+    kapt "android.arch.persistence.room:compiler:$arch_version"
 
     // Instrumentation dependencies use androidTestCompile"
     // (as opposed to testCompile for local unit tests run in the JVM"
-    androidTestCompile "junit:junit:$junit_version"
-    androidTestCompile "com.android.support:support-annotations:$support_version"
-    androidTestCompile "com.android.support.test:runner:$support_test_version"
-    androidTestCompile "com.android.support.test:rules:$support_test_version"
+    androidTestImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.annotation:annotation:$annotation_version"
+    androidTestImplementation "androidx.test:runner:$arch_version"
+    androidTestImplementation "androidx.test:rules:$arch_version"
 }

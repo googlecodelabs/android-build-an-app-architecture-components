@@ -16,12 +16,12 @@
 
 package com.example.android.sunshine.data.database;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
-import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 import android.util.Log;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 /**
  * {@link SunshineDatabase} database for the application including a table for {@link WeatherEntry}
@@ -29,7 +29,7 @@ import android.util.Log;
  */
 
 // List of the entry classes and associated TypeConverters
-@Database(entities = {WeatherEntry.class}, version = 1)
+@Database(entities = {WeatherEntry.class}, version = 1, exportSchema = false)
 @TypeConverters(DateConverter.class)
 public abstract class SunshineDatabase extends RoomDatabase {
 

@@ -15,8 +15,7 @@
  */
 package com.example.android.sunshine.data.network;
 
-import android.support.annotation.NonNull;
-
+import androidx.annotation.NonNull;
 import com.example.android.sunshine.data.database.WeatherEntry;
 
 /**
