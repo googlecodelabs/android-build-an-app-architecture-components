@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.example.android.sunshine"
-        minSdkVersion 14
-        targetSdkVersion 26
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -28,21 +28,28 @@ android {
 
 // Versions number variables are defined in the module build.gradle file
 dependencies {
-    compile "com.android.support:appcompat-v7:$support_version"
-    compile "com.android.support:recyclerview-v7:$support_version"
-    compile "com.android.support:preference-v7:$support_version"
-    compile "com.android.support.constraint:constraint-layout:$constraint_layout_version"
-    compile "com.firebase:firebase-jobdispatcher:$firebase_jobdispatcher_version"
-    compile "android.arch.lifecycle:runtime:$arch_version"
-    compile "android.arch.lifecycle:extensions:$arch_version"
-    annotationProcessor "android.arch.lifecycle:compiler:$arch_version"
-    compile "android.arch.persistence.room:runtime:$arch_version"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:recyclerview-v7:$support_version"
+    implementation "com.android.support:preference-v7:$support_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+    implementation "com.firebase:firebase-jobdispatcher:$firebase_jobdispatcher_version"
+
+    // https://developer.android.com/topic/libraries/architecture/adding-components
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$arch_version"
+    implementation "android.arch.lifecycle:common-java8:$arch_version"
+    implementation "android.arch.persistence.room:runtime:$arch_version"
     annotationProcessor "android.arch.persistence.room:compiler:$arch_version"
 
-    // Instrumentation dependencies use androidTestCompile"
+    // optional - Test helpers for LiveData and Room
+    testImplementation "android.arch.core:core-testing:$arch_version"
+    testImplementation "android.arch.persistence.room:testing:$arch_version"
+
+    // Instrumentation dependencies use androidTestImplementation"
     // (as opposed to testCompile for local unit tests run in the JVM"
-    androidTestCompile "junit:junit:$junit_version"
-    androidTestCompile "com.android.support:support-annotations:$support_version"
-    androidTestCompile "com.android.support.test:runner:$support_test_version"
-    androidTestCompile "com.android.support.test:rules:$support_test_version"
+    androidTestImplementation "junit:junit:$junit_version"
+    androidTestImplementation "com.android.support:support-annotations:$support_version"
+    androidTestImplementation "com.android.support.test:runner:$support_test_version"
+    androidTestImplementation "com.android.support.test:rules:$support_test_version"
 }
